@@ -1,12 +1,18 @@
-import React from 'react';
-import './styles.scss';
+import React from "react";
+import "./styles.scss";
 
-const Home = () =>  {
-    return (
-        <div>
-            Home Page
-        </div>
-    );
-}
+const Home = () => {
+  return (
+    <section id="home" className="home">
+      <div className="home__text-wrapper">
+        <h1>
+          Hello, I'm Avinash Gupta
+          <br />
+          Front end developer
+        </h1>
+      </div>
+    </section>
+  );
+};
 
 export default Home;
