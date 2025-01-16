@@ -10,7 +10,7 @@ const data = [
     to: "/",
   },
   {
-    label: "About ME",
+    label: "ABOUT ME",
     to: "/about",
   },
   {
@@ -47,7 +47,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <ul className="navbar__container__menu">
+        <ul className={`navbar__container__menu ${toggleIcon ? "active" : ""}`}>
             {
                 data.map((item,key) => (
                     <li key={key} className="navbar__container__menu__item"> 
