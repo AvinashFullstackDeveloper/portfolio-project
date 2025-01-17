@@ -2,6 +2,30 @@ import React from 'react';
 import './styles.scss';
 import PageHeaderContent from "../../components/pageHeaderContent/index";
 import { BsInfoCircleFill } from 'react-icons/bs';
+import { Animate } from 'react-simple-animate';
+
+const personalDetails = [
+    {
+        label: "Name",
+        value: "Avinash Gupta"
+    },
+    {
+        label: "Age",
+        value: "31"
+    },
+    {
+        label: "Address",
+        value: "India"
+    },
+    {
+        label: "Email",
+        value: "avinash5693@gmail.com"
+    },
+    {
+        label: "Contact No",
+        value: "+91 9768145640"
+    }
+];
 
 const About = () =>  {
 
@@ -13,8 +37,46 @@ const About = () =>  {
             icon={<BsInfoCircleFill size={40} />} 
                 />
                 <div className="about__content">
+                    <div className="about__content__personalWrapper">
+                    <Animate
+                          play
+                          duration={1.5}
+                          delay={1}
+                          start={{
+                          transform: "translateX(-900px)"
+                          }}
+                          end={{
+                          transform: "translatex(0px)"
+                          }}>
                 <h3> Front End Developer </h3>
                 <p>{jobSummary}</p>
+                </Animate>
+
+                <Animate
+                          play
+                          duration={1.5}
+                          delay={1}
+                          start={{
+                          transform: "translateX(5  00px)"
+                          }}
+                          end={{
+                          transform: "translatex(0px)"
+                          }}>
+                <h3 className="personalInformationHeaderText">Personal Information</h3>
+                <ul>
+                          {
+                            personalDetails.map((item,i)=> {
+                                <li key={i}>
+                                    <span className="title">{item.label}</span>
+                                    <span className="value">{item.value}</span>
+                                </li>
+                            } )
+                          }
+                </ul>
+                </Animate>
+                    </div>
+                    <div className="about__content__servicesWrapper">Services Wrapper</div>
+                   
                 </div>
         </section>
     );
